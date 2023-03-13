@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:liquid_swipe/liquid_swipe.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: prac10(),
+      home: prac11(),
     );
   }
 }
@@ -343,6 +344,48 @@ class prac10 extends StatelessWidget {
           ],
         ),
       )),
+    );
+  }
+}
+
+class prac11 extends StatelessWidget {
+  const prac11({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final pages = [
+      Container(
+        color: Colors.amber,
+        child: Center(
+          child: Text("1st page"),
+        ),
+      ),
+      Container(
+        color: Colors.red,
+        child: Center(
+          child: Text("1st page"),
+        ),
+      ),
+      Container(
+        color: Colors.green,
+        child: Center(
+          child: Text("1st page"),
+        ),
+      ),
+      Container(
+        color: Colors.pink,
+        child: Center(
+          child: Text("1st page"),
+        ),
+      ),
+    ];
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: SafeArea(
+          child: Scaffold(
+        body: LiquidSwipe(pages: pages),
+      )
+      ),
     );
   }
 }
