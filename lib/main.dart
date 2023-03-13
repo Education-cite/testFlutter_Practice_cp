@@ -393,6 +393,8 @@ class MyApp extends StatelessWidget {
 //   }
 // }
 
+
+
 class prac12 extends StatelessWidget {
   const prac12({Key? key}) : super(key: key);
 
@@ -404,7 +406,8 @@ class prac12 extends StatelessWidget {
       home: SafeArea(
           child: Scaffold(
         body: LiquidSwipe(pages: pages),
-      )),
+      ),
+      ),
     );
   }
 }
