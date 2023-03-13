@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: prac12(),
+      home: prac13(),
     );
   }
 }
@@ -393,8 +393,6 @@ class MyApp extends StatelessWidget {
 //   }
 // }
 
-
-
 class prac12 extends StatelessWidget {
   const prac12({Key? key}) : super(key: key);
 
@@ -404,9 +402,64 @@ class prac12 extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: SafeArea(
-          child: Scaffold(
-        body: LiquidSwipe(pages: pages),
+        child: Scaffold(
+          body: LiquidSwipe(pages: pages),
+        ),
       ),
+    );
+  }
+}
+
+class prac13 extends StatelessWidget {
+  const prac13({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: SafeArea(
+        child: Scaffold(
+          body: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: GridView.count(
+              mainAxisSpacing: 10,
+              crossAxisSpacing: 10,
+              crossAxisCount: 3,
+              children: [
+                Container(
+                  color: Colors.amber,
+                  height: 250,
+                  width: 250,
+                ),
+                Container(
+                  color: Color.fromARGB(255, 7, 255, 114),
+                  height: 250,
+                  width: 250,
+                ),
+                Container(
+                  color: Color.fromARGB(255, 131, 7, 255),
+                  height: 250,
+                  width: 250,
+                ),
+                Container(
+                  color: Colors.red,
+                  height: 250,
+                  width: 250,
+                ),
+                Container(
+                  color: Colors.pink,
+                  height: 250,
+                  width: 250,
+                ),
+                Container(
+                  color: Colors.black,
+                  height: 250,
+                  width: 250,
+                )
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
