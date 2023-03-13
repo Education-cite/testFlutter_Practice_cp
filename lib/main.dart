@@ -432,12 +432,12 @@ class prac13 extends StatelessWidget {
                   width: 250,
                 ),
                 Container(
-                  color: Color.fromARGB(255, 7, 255, 114),
+                  color: Colors.green,
                   height: 250,
                   width: 250,
                 ),
                 Container(
-                  color: Color.fromARGB(255, 131, 7, 255),
+                  color: Colors.blueGrey,
                   height: 250,
                   width: 250,
                 ),
