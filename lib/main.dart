@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: prac13(),
+      home: pracN12(),
     );
   }
 }
@@ -461,6 +461,78 @@ class prac13 extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class prac14 extends StatefulWidget {
+  const prac14({Key? key}) : super(key: key);
+
+  @override
+  State<prac14> createState() => _prac14State();
+}
+
+var _currentState = 0;
+final pages = [
+  page1(),
+  page2(),
+  page3(),
+];
+
+class _prac14State extends State<prac14> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentState,
+        items: [
+          BottomNavigationBarItem(
+              label: "Label 1", icon: Icon(Icons.width_wide_outlined)),
+          BottomNavigationBarItem(
+              label: "Label 2", icon: Icon(Icons.account_balance_sharp)),
+          BottomNavigationBarItem(label: "Label 3", icon: Icon(Icons.comment)),
+          BottomNavigationBarItem(label: "Label 4", icon: Icon(Icons.home)),
+        ],
+        onTap: (index) {
+          setState(() {
+            _currentState = index;
+          });
+        },
+      ),
+      body: pages[_currentState],
+    );
+  }
+}
+
+class pracN12 extends StatelessWidget {
+  const pracN12({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+          appBar: AppBar(
+            bottom: TabBar(tabs: [
+              Tab(
+                text: "tab 1",
+                icon: Icon(Icons.yard),
+              ),
+              Tab(
+                text: "tab 2",
+                icon: Icon(Icons.yard),
+              ),
+              Tab(
+                text: "tab 3",
+                icon: Icon(Icons.yard),
+              )
+            ]
+            ),
+          ),
+          body: TabBarView(
+            children: [page1(), page2(), page3()],
+          )
+          ),
     );
   }
 }

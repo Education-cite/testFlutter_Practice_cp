@@ -1,19 +1,39 @@
 import 'package:flutter/material.dart';
 
 class page2 extends StatelessWidget {
-  const page2({Key? key}) : super(key: key);
+  const page2({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Color.fromARGB(255, 86, 33, 243),
-      child: const Center(
-        child: Text(
-          "2nd page",
-          style: TextStyle(
-              color: Color.fromARGB(255, 81, 0, 212),
-              fontSize: 40.0,
-              fontWeight: FontWeight.bold),
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: GridView.count(
+          mainAxisSpacing: 10,
+          crossAxisSpacing: 10,
+          crossAxisCount: 2,
+          children: [
+            Container(
+              color: Colors.amberAccent,
+              height: 250,
+              width: 250,
+            ),
+            Container(
+              color: Colors.cyan,
+              height: 250,
+              width: 250,
+            ),
+            Container(
+              color: Colors.teal,
+              height: 250,
+              width: 250,
+            ),
+            Container(
+              color: Colors.amberAccent,
+              height: 250,
+              width: 250,
+            ),
+          ],
         ),
       ),
     );
